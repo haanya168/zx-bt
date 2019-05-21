@@ -100,7 +100,7 @@ spring:
     database-platform: org.hibernate.dialect.MySQL5Dialect
     hibernate:
       ddl-auto: none
-    show-sql: false
+    show-sql: true
 security:
   basic:
     enabled: false

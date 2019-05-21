@@ -34,7 +34,7 @@ public class Bencode {
     private BiFunction<byte[], Integer, MethodResult>[] functions = new BiFunction[4];
 
     //string类型分隔符(冒号)的byte形式.
-    private  byte stringTypeSeparator;
+    private byte stringTypeSeparator;
 
     //bencode编码中的若干类型前缀和后缀------------
     private final String intTypePre = "i";
@@ -183,12 +183,13 @@ public class Bencode {
             } catch (Exception e) {
             }
         }
-            throw new BTException(LOG + "解码失败.start:" + start +",bytes:" + new String(bytes,charset));
+        throw new BTException(LOG + "解码失败.start:" + start + ",bytes:" + new String(bytes, charset));
 
     }
 
     /**
      * 封装任意类型解码
+     *
      * @param tClass 返回的类型 可选Map/String/Integer/List
      */
     @SuppressWarnings("unchecked")
@@ -248,9 +249,9 @@ public class Bencode {
     public String encodeAny(Object obj) {
         try {
             if (obj instanceof Integer) {
-                return encodeLong(Integer.toUnsignedLong((int)obj) );
-            }else if(obj instanceof Long){
-                return encodeLong((long)obj );
+                return encodeLong(Integer.toUnsignedLong((int) obj));
+            } else if (obj instanceof Long) {
+                return encodeLong((long) obj);
             } else if (obj instanceof String) {
                 return encodeString((String) obj);
             } else if (obj instanceof Map) {
@@ -293,7 +294,6 @@ public class Bencode {
         private T value;
         private int index;
     }
-
 
 
 }

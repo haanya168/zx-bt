@@ -122,7 +122,7 @@ public class UDPServer {
             try {
                 messageInfo = BTUtil.getMessageInfo(map);
             } catch (BTException e) {
-                log.debug("{}解析MessageInfo异常.异常:{}", LOG, e.getMessage());
+                log.debug("{}解析MessageInfo异常.异常:{}", LOG, e.getMessage(),e);
                 return;
             } catch (Exception e) {
                 log.debug("{}解析MessageInfo异常.异常:{}", LOG, e.getMessage(), e);
