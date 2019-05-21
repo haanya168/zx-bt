@@ -9,11 +9,9 @@ management:
     enabled: false
 spring:
   datasource:
-    url: jdbc:mysql://rm-uf659fc1pyp136g328o.mysql.rds.aliyuncs.com:3306/zx-bt?useSSL=false&autoReconnect=true&failOverReadOnly=false&maxReconnects=10
-#    url: jdbc:mysql://127.0.0.1:3306/zx-bt?useSSL=false&autoReconnect=true&failOverReadOnly=false&maxReconnects=10
+    url: jdbc:mysql://127.0.0.1:3306/zx-bt?useSSL=false&autoReconnect=true&failOverReadOnly=false&maxReconnects=10
     username: root
-    password: Lzb112358*
-#    password: 123456
+    password: 123456
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     # DataSource配置
@@ -117,10 +115,9 @@ zx-bt:
     # 握手超时时间
     socket-timeout: 1500
   es:
-    cluster-name: zx
-    ip: 106.14.7.29
-#    ip: 172.19.87.203
-    port: 9300
+    cluster-name: cluster1
+    ip: 127.0.0.1
+    port: 9200
   performance:
     # find_node任务,线程数
     find-node-task-thread-num: 30
@@ -171,11 +168,11 @@ zx-bt:
 
   main:
     # 是否开启主任务
-    start: false
+    start: true
     # 是否为主节点
     master: true
     # 主节点url
-    masterUrl: http://101.132.42.102:8080/filter
+    masterUrl: http://127.0.0.1:8080/filter
     # 当前开启的解析器类型
     infoHashParserTypes:
     # 配置版本标识
@@ -214,7 +211,7 @@ zx-bt:
       - 44472
       - 44473
       - 44474
-    ip: 106.15.176.109
+    ip: 10.53.133.169
     init-addresses:
       # 以下是比较有名的节点.其中utorrent是比较好的.剩余两个有点垃圾
       - router.utorrent.com:6881

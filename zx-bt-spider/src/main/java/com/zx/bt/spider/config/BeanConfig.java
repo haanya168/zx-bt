@@ -24,6 +24,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
@@ -127,7 +128,7 @@ public class BeanConfig {
 		//如果settings为空,可以使用Settings.EMPTY
 		//但是不传入settings,会无法访问
 		TransportClient client = new PreBuiltTransportClient(settings);
-		client.addTransportAddress(node);
+		client.addTransportAddress(new TransportAddress(new InetSocketAddress("127.0.0.1", 9300)));
 		return client;
 	}
 

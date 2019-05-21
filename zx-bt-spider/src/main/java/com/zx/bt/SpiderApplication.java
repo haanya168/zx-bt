@@ -68,7 +68,8 @@ public class SpiderApplication implements CommandLineRunner {
 	@SneakyThrows
 	public void test() {
 		// 使用行迭代器，迭代该文件的每一行
-		File file = new File(File.separator + "a.txt");
+//		this.getClass().getClassLoader().getResourceAsStream();
+		File file = new File("C:\\a.txt");
 		LineIterator lineIterator = FileUtils.lineIterator(file);
 		int i = 0;
 

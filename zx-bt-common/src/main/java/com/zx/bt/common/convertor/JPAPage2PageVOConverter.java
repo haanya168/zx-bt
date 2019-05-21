@@ -21,7 +21,7 @@ public class JPAPage2PageVOConverter {
     public static <T> PageVO<T> convert(Page<T> page) {
         int pageNo = page.getNumber();
 
-        PageVO<T> pageVO = new PageVO<>(++pageNo, page.getSize(), page.getTotalElements(), page.getTotalPages(), page.getContent());
+        PageVO<T> pageVO = new PageVO<T>(++pageNo, page.getSize(), page.getTotalElements(), page.getTotalPages(), page.getContent());
         //防止totalPage为0
         pageVO.setTotalPage(pageVO.getTotalPage() == 0 ? 1 : pageVO.getTotalPage());
         return pageVO;
